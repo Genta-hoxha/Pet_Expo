@@ -6,9 +6,9 @@ function Header() {
     
     <header id='header'> 
         <img src={logo} />
-        <div className='search'>
+        {/* <div className='search'>
         <input type="text" id="searchInput" placeholder="Search for images" />
-      <button id="searchButton" >Search</button></div>
+      <button id="searchButton" >Search</button></div> */}
         <nav>
     <ul>
       <li>
@@ -26,4 +26,6 @@ function Header() {
   )
 }
 
-export default Header
+export default Header;  
+
+
