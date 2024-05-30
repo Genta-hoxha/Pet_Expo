@@ -1,38 +1,8 @@
-// import React from 'react';
-// import './App.css';
-// import { BrowserRouter as Router } from 'react-router-dom';
-// import AppRoutes from './routes/Routes'; 
-// import Header from './components/Header';
-// function App() {
- 
-//   return ( <>
-   
-   
-//       <Router>
-//         <div> 
-//           <Header  />
-//           <AppRoutes />
-//         </div>
-//       </Router>
-//     </>
-//   );
-// }
-
-// export default App;
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import AppRoutes from './routes/Routes';
-
-// const api = {
-//   key: "563492ad6f9170000100000172e40c73ea194f8589f3de8585118b13",
-// };
-
 
 
 const api = {
