@@ -6,7 +6,7 @@ import ContactUs from '../components/ContactUs'
 
 const AppRoutes = () => (
   <Routes>
-    <Route exact path="/" element={<Home />} />
+    {/* <Route exact path="/" element={<Home />} /> */}
     <Route path="/aboutus" element={<AboutUs />} />
     <Route path="/contactus" element={<ContactUs />} />
   </Routes>

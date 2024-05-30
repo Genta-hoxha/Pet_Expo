@@ -17,7 +17,7 @@ const ContactUs = () => {
           including versions of Lorem Ipsum.
         </h3>
       </div>
-      {/* 
+{/*       
       <Footer showOnlySecondColumn /> */}
     </div>
   );
