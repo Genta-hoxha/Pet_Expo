@@ -52,6 +52,7 @@ const App = () => {
   };
 
   const handleSearchSubmit = () => {
+    console.log("genta")
     fetchPhotos(query);
   };
 
@@ -66,6 +67,10 @@ const App = () => {
     setPhotos(photos.map(photo => 
       photo.id === id ? { ...photo, liked: !photo.liked } : photo
     ));
+  };
+
+  const handleLiked = () => {
+   console.log("liked photo ")
   };
 
   return (

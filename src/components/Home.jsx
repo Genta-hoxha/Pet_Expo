@@ -14,7 +14,7 @@ const Home = ({ photos, isLoading, error, modal, setModal, toggleLike }) => {
 
   if (isLoading) {
     return (
-      <div id="container">
+      <div id="containerskeleton">
         {Array.from({ length: 10 }).map((_, index) => (
           <div key={index} className="card skeleton">
             <div className="card__body">
@@ -33,7 +33,7 @@ const Home = ({ photos, isLoading, error, modal, setModal, toggleLike }) => {
   }
 
   return (
-    <div>
+    // <div id='fullcontainer'>
       <div id="container">
         {modal.isOpen && (
           <div className="modal" style={{ display: 'block' }}>
@@ -55,9 +55,10 @@ const Home = ({ photos, isLoading, error, modal, setModal, toggleLike }) => {
               </p>
             </div>
           </div>
-        ))}
+
+                ))}
       </div>
-    </div>
+    // </div>
   );
 };
 
