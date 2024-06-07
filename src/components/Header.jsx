@@ -14,9 +14,9 @@ function Header({ query, handleSearchChange, handleKeyDown, handleSearchSubmit, 
     setNavVisible(!navVisible);
   };
 
-  const handleSearchClick = () => {
-    setIsSearchExpanded(!isSearchExpanded);
-  };
+  // const handleSearchClick = () => {
+  //   setIsSearchExpanded(!isSearchExpanded);
+  // };
   return (
 
   <header id='header'> 
@@ -72,62 +72,6 @@ function Header({ query, handleSearchChange, handleKeyDown, handleSearchSubmit, 
    
 
 </header>
-
-
-
-
-
-
-
-
-
-
-
-
-    //    <header id='header'> 
-    //     <div>
-    //   <img src={logo} alt="logo" id='imgheader' />
-    //      <input 
-    //       type="text" 
-    //       id="searchInput" 
-    //       placeholder="Search for images" 
-    //       value={query} 
-    //       onChange={handleSearchChange} 
-    //       onKeyDown={handleKeyDown}
-    //     />
-    //     <button id="searchButton" onClick={handleSearchSubmit}>
-    //       <img
-    //         src={searchlogo}
-    //         alt="icon"
-    //         style={{ width: "70px", height: "70px" }}
-    //       />
-    //     </button>
-    //     <button id="likedButton" onClick={handleLiked}>
-    //       <img
-    //         src={likedlogo}
-    //         alt="icon"
-    //         style={{ width: "30px", height: "30px" }}
-    //       />
-    //     </button>
-    //   </div>
-    //   <button id="nav-toggle" onClick={toggleNav}>
-    //     ☰
-    //   </button>
-    //   <nav>
-    //   <ul className={navVisible ? 'show' : ''}>
-    //       <li>
-    //         <Link to="/" className={location.pathname === '/' ? 'active' : ''}>HOME</Link>
-    //       </li>
-    //       <li>
-    //         <Link to="/aboutus" className={location.pathname === '/aboutus' ? 'active' : ''}>ABOUT US</Link>
-    //       </li>
-    //       <li>
-    //         <Link to="/contactus" className={location.pathname === '/contactus' ? 'active' : ''}>CONTACT US</Link>
-    //       </li>
-    //     </ul>
-    //   </nav>
-    // </header>
-  
   );
 }
 

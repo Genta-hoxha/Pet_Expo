@@ -6,39 +6,42 @@ import AppRoutes from './routes/Routes';
 
 
 const api = {
-  url: "https://api.pexels.com/v1/search?query=nature&size=medium",
-  key: "563492ad6f9170000100000172e40c73ea194f8589f3de8585118b13",
+  url: "https://freetestapi.com/api/v1/animals?sort=name&order=desc",
+  // url: "https://api.pexels.com/v1/search?query=nature&size=medium",
+  // key: "563492ad6f9170000100000172e40c73ea194f8589f3de8585118b13",
 };
 const App = () => {
-  const [query, setQuery] = useState('animals');
-  const [photos, setPhotos] = useState([]);
+  const [query, setQuery] = useState('dogs');
+  const [animals, setAnimals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [modal, setModal] = useState({ isOpen: false, src: '', alt: '', photographer: '' });
+  const [modal, setModal] = useState({ isOpen: false });
 
   useEffect(() => {
-    fetchPhotos(query);
+    fetchAnimals(query);
   }, [query]);
 
-  const fetchPhotos = (query) => {
+  const fetchAnimals = (query) => {
     setIsLoading(true);
-    fetch(`https://api.pexels.com/v1/search?query=${query}&size=medium`, {
-      headers: {
-        Authorization: api.key,
-      },
-    })
+    fetch(`${api.url}&query=${query}`)
+
+    // fetch(`https://api.pexels.com/v1/search?query=${query}&size=medium`, {
+    //   headers: {
+    //     Authorization: api.key,
+    //   },
+    // })
       .then((res) => {
         if (!res.ok) {
-          throw new Error("Image not found 😏");
+          throw new Error("Animal not found 😏");
         }
         return res.json();
       })
       .then((data) => {
-        const photosWithLikes = data.photos.map(photo => ({
-          ...photo,
+        const animalsWithLikes = data.map(animal => ({
+          ...animal,
           liked: false,
         }));
-        setPhotos(photosWithLikes);
+        setAnimals(animalsWithLikes);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -53,25 +56,25 @@ const App = () => {
 
   const handleSearchSubmit = () => {
     console.log("genta")
-    fetchPhotos(query);
+    fetchAnimals(query);
   };
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      fetchPhotos(query);
+      fetchAnimals(query);
     }
   };
 
-  const toggleLike = (id) => {
-    setPhotos(photos.map(photo => 
-      photo.id === id ? { ...photo, liked: !photo.liked } : photo
-    ));
-  };
+  // const toggleLike = (id) => {
+  //   setAnimals(animals.map(animal => 
+  //     animal.id === id ? { ...animal, liked: !animal.liked } : animal
+  //   ));
+  // };
 
-  const handleLiked = () => {
-   console.log("liked photo ")
-  };
+  // const handleLiked = () => {
+  //  console.log("liked photo ")
+  // };
 
   return (
     <Router>
@@ -86,12 +89,12 @@ const App = () => {
           path="/" 
           element={
             <Home 
-              photos={photos}
+            animals={animals}
               isLoading={isLoading}
               error={error}
               modal={modal}
               setModal={setModal}
-              toggleLike={toggleLike}
+              // toggleLike={toggleLike}
             />
           } 
         />
