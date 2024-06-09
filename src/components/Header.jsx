@@ -37,20 +37,32 @@ function Header({ query, handleSearchChange, handleKeyDown, handleSearchSubmit }
       </nav>
       <img src={logo} alt="logo" id='imgheader' />
       <div className={`search ${searchVisible ? 'show' : ''}`}>
-        <div onSubmit={handleSearchSubmit}>
+      <form onSubmit={handleSearchSubmit}>
+          <span id="searchIcon" onClick={toggleSearch}>🔍</span>
           <input 
             type="text" 
-                      id="searchInput" 
-            className={searchVisible ? 'show' : ''} 
-            placeholder="Search for animals" 
+            id="searchInput" 
+            placeholder="Search for animals... 🔍" 
             value={query} 
             onChange={handleSearchChange} 
             onKeyDown={handleKeyDown} 
           />
-          <button type="button" id="searchButton" onClick={toggleSearch}>
-            <img src={searchlogo}  alt="icon" style={{ width: "90px", height: "90px" }} />
-          </button>
-        </div>
+        </form>
+
+        {/* <div onSubmit={handleSearchSubmit}>🔍
+          <input 
+            type="text" 
+                      id="searchInput" 
+            className={searchVisible ? 'show' : ''} 
+            placeholder="Search for animals... 🔍" 
+            value={query} 
+            onChange={handleSearchChange} 
+            onKeyDown={handleKeyDown} 
+            onClick={toggleSearch}
+          />
+         
+        </div> */}
+
       </div>
     </header>
   );

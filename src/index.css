@@ -86,19 +86,12 @@ nav ul li a.active {
   border-radius: 25px;
   float: right;
   background: #f7f1f0;
+  margin-top: -56px;
 }
 #searchInput.expanded {
   width: 200px;
   opacity: 1;
   visibility: visible;
-}
-#likedButton {
-  background-color: transparent;
-  border: 2px solid transparent;
-  padding: 10px;
-  position: absolute;
-  margin-top: -68px;
-  margin-left: 58rem;
 }
 
 #container { 
@@ -136,6 +129,7 @@ nav ul li a.active {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 35px;
+  margin-left: 30px;
 }
 
 .row-about {
@@ -403,7 +397,14 @@ table, th, td {
 #height-title {
   color: #a15c38;
 }
-
+.search {
+  display: flex;
+  align-items: center;
+  position: relative; 
+}
+ #searchIcon {
+    display: none;
+  }
 
 /*SCREEN RESPONSIVE*/
 
@@ -430,47 +431,38 @@ table, th, td {
     height: 12rem;
     object-fit: contain;
     background-color: transparent;
-    margin: 5px -41px 0 8px;
+    margin: 3px 6px 0 8px;
   }
+  #searchInput {
+    display: block;
+  }
+  
+ 
 
-  .search {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0px;
-  }
 
 #searchInput {
-  font-size: 12px;
-  font-family: cursive, SANS-SERIF;
-  border: 1px solid #a15c38;
-  padding: 10px;
-  border-radius: 25px;
-  background: #f7f1f0;
-  width: 0;
-  opacity: 0;
-  transition: width 0.3s, opacity 0.3s;
-  position: absolute;
-  right: 10px;
-  visibility: hidden;
+  display: none;
 }
 
-#searchButton {
-  background-color: transparent;
-  border: 2px solid transparent;
-  padding: 10px;
-  position: relative;
-  z-index: 1;
+.search.show #searchInput {
+   margin-right: 0px;
+    margin-left: -240px;
+margin-top: -32px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 80px;
+}
+
+#searchIcon {
+  display: block;
   cursor: pointer;
+  font-size: 30px;
+}
+.search {
+  width: 100%;
 }
 
-
-#searchInput.expanded {
-  width: 100px;
-  opacity: 1;
-  visibility: visible;
-}
 .card {
   width: 252px;
   }
@@ -487,7 +479,8 @@ table, th, td {
     display: grid;
     grid-template-columns: 1fr;
     align-content: center;
-    justify-content: space-between;
+    justify-content: space-between;        margin-left: 35px;
+  
  }
 
   nav ul {
@@ -516,6 +509,7 @@ table, th, td {
     color: #a15c38;
     border-color: transparent;
     font-size: 35px;
+    margin-left: 10px;
   }
   .closebtn {
     font-size: 25px;
@@ -527,11 +521,7 @@ table, th, td {
   body.nav-open {
     margin-left: 250px;
   }
-  #searchInput.expanded {
-    width: 200px;
-    opacity: 1;
-    visibility: visible;
-  }
+ 
   span.close {
     margin-top: 30px;
     margin-right: -9rem;
@@ -613,6 +603,18 @@ table, th, td {
   background-color: #262220;
   position: relative;
 }
+.image-about{
+  margin-top: 25px;
+}
+.about-text {
+  font-size: 14px;
+   margin-top: 3px;
+}
+.contact-text {
+  font-size: 10px;}
+  .image-contact {
+       margin-top: 45px;
+  }
 }
 @media (min-width: 321px) and (max-width: 375px) {
   #header {
@@ -639,47 +641,36 @@ table, th, td {
     margin: 0 auto;
   }
 
-  .search {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0px;
+  #searchInput {
+    display: block;
   }
+  
+ 
+
 
 #searchInput {
-  font-size: 12px;
-  font-family: cursive, SANS-SERIF;
-  border: 1px solid #a15c38;
-  padding: 10px;
-  border-radius: 25px;
-  background: #f7f1f0;
-  width: 0;
-  opacity: 0;
-  transition: width 0.3s, opacity 0.3s;
-  position: absolute;
-  right: 10px;
-  visibility: hidden;
+  display: none;
 }
 
-#searchButton {
-  background-color: transparent;
-  border: 2px solid transparent;
-  padding: 10px;
-  position: relative;
-  z-index: 1;
+.search.show #searchInput {
+
+        margin-right: 0px;
+        margin-left: -147px;
+    margin-top: -32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+#searchIcon {
+  display: block;
   cursor: pointer;
+  font-size: 30px;
 }
-
-#searchInput.expanded {
-  width: 100px;
-  opacity: 1;
-  visibility: visible;
+.search {
+  width: 100%;
 }
-/* #searchInput.expanded {
-  width: calc(100% - 40px); 
-    opacity: 1;
-} */
 
 .card {
   width: 210px;
@@ -738,11 +729,7 @@ table, th, td {
   body.nav-open {
     margin-left: 250px;
   }
-  #searchInput.expanded {
-    width: 200px;
-    opacity: 1;
-    visibility: visible;
-  }  span.close {
+ span.close {
     margin-top: 30px;
     margin-right: -9rem;
 }
@@ -804,6 +791,18 @@ table, th, td {
   position: relative;
 
  }
+ .image-about{
+  margin-top: 25px;
+}
+.about-text {
+  font-size: 14px;
+   margin-top: 3px;
+}
+.contact-text {
+  font-size: 10px;}
+  .image-contact {
+       margin-top: 45px;
+  }
   
 }
 @media (min-width: 375px) and (max-width: 425px) {
@@ -833,7 +832,41 @@ table, th, td {
     margin: 5px -41px 0 8px;
   }
 
-  .search {
+
+  #searchInput {
+    display: block;
+  }
+  
+ 
+
+
+#searchInput {
+  display: none;
+}
+
+.search.show #searchInput {
+  margin-right: 0px;
+  margin-left: -114px;
+  margin-top: -35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 71px;
+}
+
+#searchIcon {
+  display: block;
+  cursor: pointer;
+  font-size: 30px;
+  margin-left: 53px;
+        margin-top: 10px;
+}
+.search {
+  width: 100%;
+}
+
+
+  /* .search {
     position: relative;
     display: flex;
     align-items: center;
@@ -854,27 +887,9 @@ table, th, td {
   position: absolute;
   right: 10px;
   visibility: hidden;
-}
-
-#searchButton {
-  background-color: transparent;
-  border: 2px solid transparent;
-  padding: 10px;
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-}
-
-
-#searchInput.expanded {
-  width: 100px;
-  opacity: 1;
-  visibility: visible;
-}
-/* #searchInput.expanded {
-  width: calc(100% - 40px); 
-    opacity: 1;
 } */
+
+
 
 .card {
   width: 210px;
@@ -1018,6 +1033,7 @@ span.close {
   min-width: auto;
   font-size: 14px;
 }
+
 #img01 {
   margin-right: 20px;
   width: 114px;
@@ -1027,7 +1043,13 @@ span.close {
   margin-top: -23px;
 
 }
+.image-about{
+  margin-top: 25px;
 }
+.about-text {
+  font-size: 14px;
+   margin-top: 3px;
+}}
 @media (min-width: 425px) and (max-width: 560px) {
   #header {
     display: flex;
@@ -1071,18 +1093,8 @@ span.close {
     padding: 8px;
     border-radius: 25px;
     background: #f7f1f0;
-    margin-top: 40px;
+    margin-top: auto;
     margin-left: -98px;
-  }
-
-  #searchButton {
-    background-color: transparent;
-    border: 2px solid transparent;
-    padding: 10px;
-    position: relative;
-    margin: 0px -117px 0px 55px;
-    z-index: 1;
-    cursor: pointer;
   }
 
   #likedButton {
@@ -1193,6 +1205,13 @@ position: relative;
 margin-top: 17px;
 
 }
+.image-about{
+  margin-top: 25px;
+}
+.about-text {
+  font-size: 14px;
+   margin-top: 3px;
+}
 }
 @media (min-width: 560px) and (max-width: 768px) {
   body {
@@ -1238,20 +1257,11 @@ margin-top: 17px;
     padding: 10px;
     border-radius: 25px;
     background: #f7f1f0;
-    margin-top: 44px;
+    margin-top: auto;
   
   }
 
-  #searchButton {
-    background-color: transparent;
-    border: 2px solid transparent;
-    padding: 10px;
-    position: relative;
-    margin-left: -68px; 
-    z-index: 1;
-    cursor: pointer;
-    margin: 6px -220px 0 178px;
-  }
+  
 
   #likedButton {
     background-color: transparent;
@@ -1404,17 +1414,10 @@ width: min-content;
     padding: 10px;
     border-radius: 25px;
     background: #f7f1f0;
+    margin-top: auto;
   }
 
-  #searchButton {
-    background-color: transparent;
-    border: 2px solid transparent;
-    padding: 10px;
-    position: relative;
-    margin-left: -68px; 
-    z-index: 1;
-    cursor: pointer;
-  }
+ 
 
   #likedButton {
     background-color: transparent;
@@ -1568,19 +1571,10 @@ width: min-content;
     padding: 10px;
     border-radius: 25px;
     background: #f7f1f0;
-    margin-top: 44px;
+    margin-top: auto;
   }
 
-  #searchButton {
-    background-color: transparent;
-    border: 2px solid transparent;
-    padding: 10px;
-    position: relative;
-    margin-left: -68px; 
-    z-index: 1;
-    cursor: pointer;
-    margin: 6px -220px 0px 178px;
-  }
+  
 
   #likedButton {
     background-color: transparent;
@@ -1728,17 +1722,9 @@ width: min-content;
     padding: 10px;
     border-radius: 25px;
     background: #f7f1f0;
+    margin-top: auto;
   }
 
-  #searchButton {
-    background-color: transparent;
-    border: 2px solid transparent;
-    padding: 10px;
-    position: relative;
-    margin: 7px -289px 0 156px;
-    z-index: 1;
-    cursor: pointer;
-  }
 
   #likedButton {
     background-color: transparent;
@@ -1759,7 +1745,7 @@ width: min-content;
     display: none;
   }
   .card {
-    width:250px;
+    width:260px;
   }
 
   span.close {
@@ -1846,7 +1832,7 @@ width: min-content;
 }
 
 }
-@media (min-width: 1240px) and (max-width: 1440px) {
+@media (min-width: 1241px) and (max-width: 1249px) {
   #header {
     display: flex;
     align-items: center;
@@ -1885,19 +1871,10 @@ width: min-content;
     padding: 10px;
     border-radius: 25px;
     background: #f7f1f0;
+    margin-top: -46px;
   }
 
-  #searchButton {
-    background-color: transparent;
-    border: 2px solid transparent;
-    padding: 10px;
-    position: relative;
-    margin-left: -68px; 
-    z-index: 1;
-    cursor: pointer;
-    margin: -34px -324px 19px 167px;
-  }
-
+ 
   #likedButton {
     background-color: transparent;
     border: 2px solid transparent;
@@ -1911,7 +1888,9 @@ width: min-content;
     grid-template-columns: repeat(3, 1fr);
     align-content: center;
     justify-content: space-between;
+    margin-left: 35px;
   }
+  
 
   #nav-toggle {
     display: none;
@@ -2008,6 +1987,199 @@ width: min-content;
 .skeleton-title {
   background-color: #262220;
   position: relative;
+}.image-about{
+  margin-top: -165px;
+}
+.about-text {
+  font-size: 20px;
+}
+.card-about {
+  width: 96%;
+}
+.card-contact {
+  width: 96%;
+  margin-left: 90px;
+}
+.contact-text {
+  font-size: 22px;
+  margin-top: 50px;
+  margin-left: 32px;
+}
+
+}
+@media (min-width: 1249px) and (max-width: 1440px) {
+  #header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 10px;
+    font-size: 17px;
+  }
+
+  #imgheader {
+    width: 11rem;
+    height: 11rem;
+    object-fit: contain;
+    background-color: transparent;
+    margin: 0 44px -8px -68px;
+  }
+
+  .search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   margin: 3px 14px -74px 0px;
+  }
+
+  #searchInput {
+    font-size: 16px;
+    font-family: cursive, SANS-SERIF;
+    border: 1px solid #a15c38;
+    padding: 10px;
+    border-radius: 25px;
+    background: #f7f1f0;
+    
+  }
+
+ 
+  #likedButton {
+    background-color: transparent;
+    border: 2px solid transparent;
+    padding: 10px;
+    margin: 0;
+    position: relative;
+  }
+  #container {
+    width: 93%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: center;
+    justify-content: space-between;
+    margin-left: 35px;
+  }
+  
+
+  #nav-toggle {
+    display: none;
+  }
+  .card {
+    width:320px;
+  }
+
+  span.close {
+    margin-top: 24px;
+    margin-right: 1rem;
+    font-size: 71px;
+  
+  }
+ 
+#img01 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 48px;
+  border-radius: 20px;
+  z-index: 1;
+  position: absolute;
+  width: 26%;
+}
+
+#shape {
+  margin-top: -18px;
+  width: 43%;
+  position: absolute;
+  margin-left: -30rem;
+ 
+}
+.modal-content {
+  max-width: 78%;
+  width: 60%;
+  height: 60%;
+  margin-top: -100px;;
+}
+.modal-title {
+  font-size: 34px;
+  position: relative;
+  font-family: cursive;
+ 
+  
+}
+.table {
+  margin-left: 22rem;
+  color: #262220;
+  background-color: #f7f1f0;
+  font-family: cursive;
+  font-size: medium;
+  margin-top:10px;
+}
+
+#diet {
+  width:40px;
+  font-weight:bold;
+}
+#weight {
+  width:40px;
+  font-weight:bold;
+}
+#height {
+  width:40px;
+  font-weight:bold;
+}
+#family {
+  width:40px;
+ margin-top: -24px;
+ font-weight:bold;
+
+}
+.description {
+  color: #262220;
+  text-align: left;
+  margin-top: -17px;
+  font-family: cursive;
+  font-size: larger;
+  margin-top: -7px;
+}
+
+#container-skeleton {
+  background-color: #f7f1f0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: center;
+  justify-content: space-between;
+}
+.card-skeleton {
+  width:320px;
+}
+.skeleton-title {
+  background-color: #262220;
+  position: relative;
+}
+.image-about{
+  margin-top: -165px;
+}
+.about-text {
+  font-size: 20px;
+}
+.card-about {
+  width: 96%;
+}
+.card-contact {
+  width: 88%;
+  margin-left: 90px;
+}
+.contact-text {
+  font-size: 22px;
+  margin-top: 50px;
+  margin-left: 32px;
 }
 
 }
@@ -2050,18 +2222,10 @@ width: min-content;
     padding: 10px;
     border-radius: 25px;
     background: #f7f1f0;
-    margin-top: 35px;
+    margin-top: auto;
   }
 
-  #searchButton {
-    background-color: transparent;
-    border: 2px solid transparent;
-    padding: 10px;
-    position: relative;
-    margin: 0 -273px 0 223px;  
-  z-index: 1;
-    cursor: pointer;
-  }
+
 
   #likedButton {
     background-color: transparent;
@@ -2078,6 +2242,8 @@ width: min-content;
     grid-template-columns: repeat(4, 1fr);
     align-content: center;
     justify-content: space-between;
+    margin-left: 65px;
+  
   }
 
   #nav-toggle {
@@ -2173,12 +2339,13 @@ width: min-content;
 }
 }
 @media (min-width: 2560px) {
-  #header {
+  header#header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    align-items: center;
+    height: 160px;
   }
+  
 
   nav ul {
     display: flex;
@@ -2189,8 +2356,8 @@ width: min-content;
   }
 
   #imgheader {
-    width: 11rem;
-    height: 11rem;
+    width: 20rem;
+    height: 20rem;
     object-fit: contain;
     background-color: transparent;
     margin: 0 44px -8px -68px;
@@ -2205,25 +2372,16 @@ width: min-content;
   }
 
   #searchInput {
-    font-size: 16px;
+    font-size: 32px;
     font-family: cursive, SANS-SERIF;
     border: 1px solid #a15c38;
     padding: 10px;
     border-radius: 25px;
     background: #f7f1f0;
-    margin-top: 35px;
+    margin-top: auto;
   }
 
-  #searchButton {
-    background-color: transparent;
-    border: 2px solid transparent;
-    padding: 10px;
-    position: relative;
-    margin: 0 -273px 0 223px;  
-  z-index: 1;
-    cursor: pointer;
-  }
-
+ 
   #likedButton {
     background-color: transparent;
     border: 2px solid transparent;
@@ -2332,4 +2490,57 @@ width: min-content;
   background-color: #262220;
   position: relative;
 }
+.image-about{
+  margin-top: -165px;
+}
+.image-about {
+  width: 93%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: -260px;
+
+}
+
+.about-text {
+  font-size: 40px; 
+  line-height: 1.5; 
+  color: #262220; 
+  font-family: cursive, sans-serif;
+  margin-top: 50px;
+  text-align: left;
+}
+.card-about {
+  width: 100%;
+  height: 750px;
+  background-color: #f7f1f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 125px;
+
+}
+
+.row-about {
+  display: flex; 
+}
+
+.column1 {
+  flex: 1; 
+  padding: 20px; }
+
+.column2 {
+  flex: 1; 
+  padding: 20px;
+}
+.card-contact {
+  width: 155%;
+  margin-left: 90px;
+  height: 711px;
+
+}
+.contact-text {
+  font-size:44px;
+  margin-top: 50px;
+  margin-left: 32px;
+}
+
 }
