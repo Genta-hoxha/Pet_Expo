@@ -5,24 +5,29 @@ import logo from '../pet-logo.png';
 import searchlogo from '../searchlogo.png';
 import { Link, useLocation } from 'react-router-dom';
 
+
+//NAVIGATION BAR & SEARCH FUNCTIONALITY
 function Header({ query, handleSearchChange, handleKeyDown, handleSearchSubmit }) {
-  const location = useLocation();
-  const [navVisible, setNavVisible] = useState(false);
-  const [searchVisible, setSearchVisible] = useState(false);
+  const location = useLocation();  //HOOK THAT GET CURRENT LOCATION
+  const [navVisible, setNavVisible] = useState(false); //STATE TO CONTROL VISIBILITY OF NAVIGATION
+  const [searchVisible, setSearchVisible] = useState(false); //STATE TO CONTROL VISIBILITY OF SEARCH
 
-  const toggleNav = () => {
-    setNavVisible(!navVisible);
-  };
+  //FUNCT. THAT TOGGLE NAVIGATION VISIVILITY
+  const toggleNav = () => setNavVisible(!navVisible);
 
-  const toggleSearch = () => {
-    setSearchVisible(!searchVisible);
-  };
+  //FUNCT. THAT TOOGLE VISIBILITY OF SEARCH INPUT
+  const toggleSearch = () => setSearchVisible(!searchVisible);
 
   return (
-    <header id='header'> 
+    <header id='header'>
+       {/* Button to toggle navigation menu */}
       <button id="nav-toggle" onClick={toggleNav}>☰</button>
+
+      {/* Navigation menu */}
       <nav>
         <ul className={navVisible ? 'show' : ''}>
+
+            {/* Button to close navigation menu */}
           <button className="closebtn" onClick={toggleNav}>×</button>
           <li>
             <Link to="/" className={location.pathname === '/' ? 'active' : ''}>HOME</Link>
@@ -36,33 +41,21 @@ function Header({ query, handleSearchChange, handleKeyDown, handleSearchSubmit }
         </ul>
       </nav>
       <img src={logo} alt="logo" id='imgheader' />
+      
+        {/* Search functionality */}
       <div className={`search ${searchVisible ? 'show' : ''}`}>
-      <form onSubmit={handleSearchSubmit}>
-          <span id="searchIcon" onClick={toggleSearch}>🔍</span>
+        <form onSubmit={handleSearchSubmit}>
+          <button id="searchIcon" onClick={toggleSearch} style={{ backgroundColor: "transparent", borderColor:"transparent"}}>
+          <img src={searchlogo} alt="Search" style={{ width: "90px", height: "90px" }} />    </button>
           <input 
             type="text" 
             id="searchInput" 
-            placeholder="Search for animals... 🔍" 
+            placeholder="Search for animals..." 
             value={query} 
             onChange={handleSearchChange} 
             onKeyDown={handleKeyDown} 
           />
         </form>
-
-        {/* <div onSubmit={handleSearchSubmit}>🔍
-          <input 
-            type="text" 
-                      id="searchInput" 
-            className={searchVisible ? 'show' : ''} 
-            placeholder="Search for animals... 🔍" 
-            value={query} 
-            onChange={handleSearchChange} 
-            onKeyDown={handleKeyDown} 
-            onClick={toggleSearch}
-          />
-         
-        </div> */}
-
       </div>
     </header>
   );
